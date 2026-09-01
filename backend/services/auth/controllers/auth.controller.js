@@ -5,6 +5,7 @@ import { createConnection } from "mongoose"
 import redis from "../../../shared/redis/redis.js"
 
 export const login = async (req, res) => {
+    console.log("LOGIN ROUTE HIT");
     try {
         const { token } = req.body
         const decoded = await getAuth(app).verifyIdToken(token)
